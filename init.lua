@@ -361,6 +361,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>sc', require('gdscript-extended-lsp').pick, { desc = '[S]earch Godot [C]lasses' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -400,6 +401,12 @@ require('lazy').setup({
       },
     },
   },
+
+  {
+    'teatek/gdscript-extended-lsp.nvim',
+    opts = {},
+  },
+
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -785,38 +792,27 @@ require('lazy').setup({
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-    end,
-  },
-
+  -- Colorschemes
+  { 'rebelot/kanagawa.nvim' },
+  { 'ellisonleao/gruvbox.nvim' },
+  { 'nyoom-engineering/oxocarbon.nvim' },
+  { 'jacoborus/tender.vim' },
+  { 'vague2k/vague.nvim' },
+  { 'AlexvZyl/nordic.nvim' },
+  { 'mocte4/godotcolour-vim' },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'EdenEast/nightfox.nvim' },
   {
-    'mocte4/godotcolour-vim',
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      local project_file = vim.fs.root(0, '/project.godot')
-      if project_file then
-        vim.cmd.colorscheme 'godotcolour'
-      end
+    'baliestri/aura-theme',
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. '/packages/neovim')
+      vim.cmd [[colorscheme aura-dark]]
     end,
   },
+  -- { 'Mofiqul/dracula.nvim' },
+  { 'dracula/vim' },
 
   -- Highlight todo, notes, etc in comments
   {
@@ -954,8 +950,12 @@ require('lazy').setup({
 })
 
 require('luasnip.loaders.from_lua').load {
-  paths = '~/.config/nvim/lua/snippets/',
+  paths = { '~/.config/nvim/lua/snippets/' },
 }
+require('telescope').load_extension 'gdscript-extended-lsp'
+
+-- Do some custom stuff at the end
+vim.cmd.colorscheme 'dracula'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=0 sw=2
