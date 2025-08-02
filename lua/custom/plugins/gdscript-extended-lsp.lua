@@ -12,4 +12,11 @@ return {
     floating_win_size = 0.8, -- Floating window size
     picker = 'telescope', -- Options : "telescope", "snacks"
   },
+  keys = {
+    {
+      '<leader>sc',
+      '<cmd>Telescope gdscript-extended-lsp class<cr>',
+      desc = '[S]earch Godot [C]lasses',
+    },
+  },
 }
