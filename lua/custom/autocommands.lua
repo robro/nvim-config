@@ -13,3 +13,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  desc = 'Format Godot script on save',
+  group = vim.api.nvim_create_augroup('godot-format', { clear = true }),
+  callback = function()
+    if vim.bo.filetype == 'gdscript' then
+      vim.cmd [[!gdformat %]]
+    end
+  end,
+})
