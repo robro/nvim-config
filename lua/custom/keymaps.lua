@@ -26,3 +26,6 @@ vim.keymap.set('n', '<A-left>', '<C-w><C-h>', { desc = 'Move focus to the left w
 vim.keymap.set('n', '<A-right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<A-down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Custom keymaps
+vim.keymap.set('n', '<leader>sc', '<Cmd>Telescope gdscript-extended-lsp class<CR>', { desc = '[S]earch Godot [C]lasses' })
