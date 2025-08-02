@@ -29,3 +29,5 @@ vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper wi
 
 -- Custom keymaps
 vim.keymap.set('n', '<leader>sc', '<Cmd>Telescope gdscript-extended-lsp class<CR>', { desc = '[S]earch Godot [C]lasses' })
+vim.keymap.set('n', '<leader>gf', '<Cmd>!gdformat %<CR>', { desc = '[G]odot [F]ormat buffer' })
+vim.keymap.set('n', '<leader>gl', '<Cmd>!gdlint %<CR>', { desc = '[G]odot [L]int buffer' })
