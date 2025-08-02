@@ -13,5 +13,3 @@ require 'custom.lazy'
 require('luasnip.loaders.from_lua').load {
   paths = { '~/.config/nvim/lua/snippets/' },
 }
-
-vim.cmd.colorscheme 'dracula'
