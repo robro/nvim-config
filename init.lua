@@ -11,5 +11,5 @@ require 'custom.autocommands'
 require 'custom.lazy'
 
 require('luasnip.loaders.from_lua').load {
-  paths = '~/.config/nvim/lua/snippets/',
+  paths = { '~/.config/nvim/lua/snippets/' },
 }
