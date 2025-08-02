@@ -156,16 +156,6 @@ return {
     --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-    -- configure godot manually because it doesn't work with mason
-    vim.lsp.start {
-      name = 'Godot',
-      cmd = vim.lsp.rpc.connect('127.0.0.1', 6006),
-      root_dir = vim.fs.dirname(vim.fs.find({ 'project.godot', '.git' }, { upward = true })[1]),
-      on_attach = function(client, bufnr)
-        vim.api.nvim_command 'echo serverstart("/tmp/godot.pipe")'
-      end,
-    }
-
     require('lspconfig').gdscript.setup(capabilities)
 
     -- Enable the following language servers
@@ -205,6 +195,7 @@ return {
           },
         },
       },
+      gdtoolkit = {},
     }
 
     -- Ensure the servers and tools above are installed
