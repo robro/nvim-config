@@ -8,19 +8,11 @@ local colors = {
 
 local color_specs = {}
 
-local function ternary(c, t, f)
-  if c then
-    return t
-  else
-    return f
-  end
-end
-
 for name, url in pairs(colors) do
   table.insert(color_specs, {
     url,
-    lazy = ternary(name == default, false, true),
-    priority = ternary(name == default, 1000, 50),
+    lazy = false,
+    priority = 1000,
     config = function()
       if name == default then
         vim.cmd.colorscheme(name)

@@ -28,5 +28,4 @@ vim.keymap.set('n', '<A-down>', '<C-w><C-j>', { desc = 'Move focus to the lower 
 vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Custom keymaps
-vim.keymap.set('n', '<leader>gf', '<Cmd>!gdformat %<CR>', { desc = '[G]odot [F]ormat buffer' })
-vim.keymap.set('n', '<leader>gl', '<Cmd>!gdlint %<CR>', { desc = '[G]odot [L]int buffer' })
+vim.keymap.set('n', '<leader>l', '<Cmd>!gdlint %<CR>', { desc = '[L]int gdscript file' })
