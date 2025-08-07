@@ -18,15 +18,13 @@ vim.api.nvim_create_autocmd('BufEnter', {
   desc = 'Set colorcolumn based on filetype',
   group = vim.api.nvim_create_augroup('set-colorcolumn', { clear = true }),
   callback = function()
-    local textwidths = {
+    local ft_columns = {
       gdscript = 100,
       python = 88,
     }
-    if textwidths[vim.bo.filetype] ~= nil then
-      vim.o.textwidth = textwidths[vim.bo.filetype]
-      vim.o.colorcolumn = '+1'
+    if ft_columns[vim.bo.filetype] ~= nil then
+      vim.o.colorcolumn = tostring(ft_columns[vim.bo.filetype] + 1)
     else
-      vim.o.textwidth = 0
       vim.o.colorcolumn = ''
     end
   end,
