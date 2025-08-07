@@ -23,6 +23,7 @@ rtp:prepend(lazypath)
 
 require('lazy').setup({
   require 'custom.colors',
+  { 'shortcuts/no-neck-pain.nvim', version = '*' },
   { import = 'custom.plugins' },
 }, {
   ui = {
