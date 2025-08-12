@@ -29,3 +29,4 @@ vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper wi
 
 -- Custom keymaps
 vim.keymap.set('n', '<leader>l', '<Cmd>!gdlint %<CR>', { desc = '[L]int gdscript file' })
+vim.keymap.set('n', '<C-y>', '<Cmd>%y<CR>', { desc = 'Yank buffer' })
