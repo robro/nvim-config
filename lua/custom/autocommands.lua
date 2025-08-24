@@ -20,3 +20,19 @@ vim.api.nvim_create_autocmd('DirChanged', {
     require('godot-server').start_server()
   end,
 })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Set colorcolumn based on filetype',
+  group = vim.api.nvim_create_augroup('set-colorcolumn', { clear = true }),
+  callback = function()
+    local ft_columns = {
+      gdscript = 100,
+      python = 88,
+    }
+    if ft_columns[vim.bo.filetype] ~= nil then
+      vim.o.colorcolumn = tostring(ft_columns[vim.bo.filetype] + 1)
+    else
+      vim.o.colorcolumn = ''
+    end
+  end,
+})
