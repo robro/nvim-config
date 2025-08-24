@@ -45,7 +45,12 @@ return {
     -- Document existing key chains
     spec = {
       { '<leader>s', group = '[S]earch' },
+      { '<leader>f', group = '[F]ind' },
+      { '<leader>g', group = '[G]oto/Godot LSP' },
       { '<leader>t', group = '[T]oggle' },
+      { '<leader>l', group = '[L]azy' },
+      { '<leader>c', group = '[C]hange' },
+      { '<leader>n', group = '[N]ext / [N]otification' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
