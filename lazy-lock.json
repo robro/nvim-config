@@ -16,6 +16,7 @@
   "mini.nvim": { "branch": "main", "commit": "0069a71538020a77a19f4f8d5e89f066e264a6dc" },
   "neovim": { "branch": "main", "commit": "72befaffeac38db7bdd49e0549eaa2c4806dd878" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "ecdfe60f23134089fac92659e688b65fdd8b5cc0" },
+  "nvim-lint": { "branch": "master", "commit": "ee04d481d4e6089892c2fb2ad8924b1a053591e1" },
   "nvim-lspconfig": { "branch": "master", "commit": "ce45ccd6a97be8752ed83d1e14ac2aff1d5a4238" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "71385f191ec06ffc60e80e6b0c9a9d5daed4824c" },
