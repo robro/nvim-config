@@ -6,17 +6,19 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    ---@class snacks.zen.Config
+    ---@type snacks.zen.Config
     zen = {
       toggles = { dim = false },
       enabled = true,
     },
     scroll = { enabled = true },
     bigfile = { enabled = true },
+    ---@type snacks.notifier.Config
     notifier = {
       enabled = true,
       timeout = 3000,
     },
+    ---@type snacks.picker.Config
     picker = {
       enabled = false,
       exclude = { '*.uid', '*.import' },
