@@ -8,7 +8,7 @@ return {
   opts = {
     ---@type snacks.zen.Config
     zen = {
-      toggles = { dim = false },
+      toggles = { dim = true },
       enabled = true,
     },
     bigfile = { enabled = true },
