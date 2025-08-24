@@ -14,18 +14,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  desc = 'Set colorcolumn based on filetype',
-  group = vim.api.nvim_create_augroup('set-colorcolumn', { clear = true }),
+vim.api.nvim_create_autocmd('DirChanged', {
+  desc = 'Start the godot server if we change to a godot directory',
   callback = function()
-    local ft_columns = {
-      gdscript = 100,
-      python = 88,
-    }
-    if ft_columns[vim.bo.filetype] ~= nil then
-      vim.o.colorcolumn = tostring(ft_columns[vim.bo.filetype] + 1)
-    else
-      vim.o.colorcolumn = ''
-    end
+    require('godot-server').start_server()
   end,
 })
