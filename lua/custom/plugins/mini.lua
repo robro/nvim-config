@@ -50,7 +50,6 @@ return {
 
     require('mini.sessions').setup {
       autowrite = true,
-      file = '.session.vim',
     }
   end,
 }
