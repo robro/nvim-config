@@ -48,7 +48,7 @@ return {
       { '<leader>f', group = '[F]ind' },
       { '<leader>g', group = '[G]oto/Godot LSP' },
       { '<leader>t', group = '[T]oggle' },
-      { '<leader>l', group = '[L]azy' },
+      { '<leader>l', group = '[L]int gdscript file' },
       { '<leader>c', group = '[C]hange' },
       { '<leader>n', group = '[N]ext / [N]otification' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
