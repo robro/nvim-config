@@ -6,6 +6,10 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    ---@class snacks.zen.Config
+    zen = {
+      enabled = true,
+    },
     bigfile = { enabled = true },
     notifier = {
       enabled = true,
@@ -499,7 +503,20 @@ return {
       desc = 'Prev Reference',
       mode = { 'n', 't' },
     },
-
+    {
+      '<leader>z',
+      function()
+        Snacks.zen()
+      end,
+      desc = 'Toggle Zen Mode',
+    },
+    {
+      '<leader>Z',
+      function()
+        Snacks.zen.zoom()
+      end,
+      desc = 'Toggle Zoom',
+    },
     -- TODO: Migrate from toggleterm
     -- { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
     -- { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore" },
