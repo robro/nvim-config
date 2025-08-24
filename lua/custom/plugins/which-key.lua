@@ -52,6 +52,7 @@ return {
       { '<leader>c', group = '[C]hange' },
       { '<leader>n', group = '[N]ext / [N]otification' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      { '<leader>z', group = '[Z]en' },
     },
   },
 }
