@@ -145,7 +145,8 @@ return {
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
     -- TODO: Solve why this can't be done in servers below
-    require('lspconfig').gdscript.setup(capabilities)
+    vim.lsp.config('gdscript', capabilities)
+    vim.lsp.enable 'gdscript'
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
