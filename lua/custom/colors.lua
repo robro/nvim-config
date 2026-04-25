@@ -1,4 +1,4 @@
-local default = 'dracula'
+local default = 'tokyonight'
 
 local colors = {
   tokyonight = { url = 'folke/tokyonight.nvim', default = 'tokyonight-moon' },
