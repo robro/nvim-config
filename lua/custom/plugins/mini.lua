@@ -51,5 +51,6 @@ return {
     require('mini.sessions').setup {
       autowrite = true,
     }
+    require('mini.align').setup()
   end,
 }
