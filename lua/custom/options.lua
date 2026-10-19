@@ -70,3 +70,7 @@ vim.o.confirm = true
 -- Set more reasonable default indent size if not otherwise specified
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+
+-- Add borders to all popups
+vim.o.winborder = 'rounded'
+vim.o.pumborder = 'rounded'

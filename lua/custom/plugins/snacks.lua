@@ -47,7 +47,7 @@ return {
     ---@type snacks.indent.Config
     indent = {
       indent = {
-        enabled = true, -- enable indent guides
+        enabled = false, -- enable indent guides
       },
       animate = {
         style = 'out',

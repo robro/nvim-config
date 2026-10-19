@@ -1,7 +1,8 @@
-local default = 'tokyonight'
+local default = 'github'
 
 local colors = {
-  tokyonight = { url = 'folke/tokyonight.nvim', default = 'tokyonight-moon' },
+  github = { url = 'projekt0n/github-nvim-theme', default = 'github_dark_colorblind' },
+  tokyonight = { url = 'folke/tokyonight.nvim', default = 'tokyonight-night' },
   godotcolour = { url = 'mocte4/godotcolour-vim', default = 'godotcolour' },
   dracula = { url = 'dracula/vim', default = 'dracula' },
   rosepine = { url = 'rose-pine/neovim', default = 'rose-pine' },

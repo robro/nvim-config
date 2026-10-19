@@ -5,11 +5,16 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'vale' },
         gdscript = { 'gdlint' },
-        rst = { 'vale' },
-        text = { 'vale' },
+        -- python = { 'pylint' },
+        -- markdown = { 'vale' },
+        -- rst = { 'vale' },
+        -- text = { 'vale' },
       }
+
+      lint.linters.pylint.cmd = 'python2'
+      lint.linters.pylint.args = { '-m', 'pylint', '-f', 'json' }
+      lint.linters.pylint.stdin = false
 
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
